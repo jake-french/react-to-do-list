@@ -1,9 +1,13 @@
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import ToDoList from './components/ToDoList';
+
+const App = () => {
+  const [ toDoItems, setToDoItems ] = useState([]);
+
   return (
-    <div className="App">
-
+    <div>
+      <ToDoList items={toDoItems} />
     </div>
   );
 }
