@@ -3,9 +3,19 @@ import React from 'react';
 export const ToDoList = ({ items = [] }) => {
 
   return(
-    <div>
-      
-    </div>
+    <table>
+      <tbody>
+        {items && items.map(item => {
+          return (
+            <tr key={item}>
+              <td>
+                {item}
+              </td>
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
   );
 };
 
