@@ -13,9 +13,9 @@ const App = () => {
 
   return (
     <div>
-      <ToDoList items={toDoItems} />
-      <br/>
       <CreateToDo onCreate={addToDo} />
+      <br />
+      <ToDoList items={toDoItems} />
     </div>
   );
 }
