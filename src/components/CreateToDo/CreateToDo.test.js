@@ -7,7 +7,7 @@ test('renders without errors', () => {
   shallow(<CreateToDo />);
 });
 
-test('on create sends new item correctly', () => {
+describe('on create sends new item correctly', () => {
   let createdToDo;
 
   const onCreate = (toDo) => {
@@ -17,5 +17,11 @@ test('on create sends new item correctly', () => {
   wrapper.find('input[name="message"]').simulate('change', { target: { value: 'Test Message' }});
   wrapper.find('form').simulate('submit');
 
-  expect(createdToDo).toEqual('Test Message');
+  test('callback returned message', () => {
+    expect(createdToDo).toEqual('Test Message');
+  });
+
+  test('input is cleared', () => {
+    expect(wrapper.find('input[name="message"]').text()).toEqual('');
+  });
 });

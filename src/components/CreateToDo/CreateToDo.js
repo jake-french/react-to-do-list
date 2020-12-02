@@ -6,11 +6,12 @@ const CreateToDo = ({ onCreate }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onCreate(message);
+    setMessage('');
   } 
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="message" onChange={evt => setMessage(evt.target.value)} />
+      <input type="text" name="message" value={message} onChange={evt => setMessage(evt.target.value)} />
       <input type="submit"/>
     </form>
   );
