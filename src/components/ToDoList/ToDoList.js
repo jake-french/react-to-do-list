@@ -4,6 +4,13 @@ export const ToDoList = ({ items = [] }) => {
 
   return(
     <table>
+      <thead>
+        <tr>
+          <th>
+            Message
+          </th>
+        </tr>
+      </thead>
       <tbody>
         {items && items.map(item => {
           return (
