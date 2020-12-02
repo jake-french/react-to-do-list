@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import CreateToDo from './CreateToDo';
 
@@ -13,7 +13,7 @@ test('on create sends new item correctly', () => {
   const onCreate = (toDo) => {
     createdToDo = toDo;
   };
-  const wrapper = shallow(<CreateToDo onCreate={onCreate}/>);
+  const wrapper = mount(<CreateToDo onCreate={onCreate}/>);
   wrapper.find('input[name="message"]').simulate('change', { target: { value: 'Test Message' }});
   wrapper.find('form').simulate('submit');
 

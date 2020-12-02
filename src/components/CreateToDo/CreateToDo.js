@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 const CreateToDo = ({ onCreate }) => {
   const [ message, setMessage ] = useState('');
 
-  const handleSubmit = () => onCreate(message);
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onCreate(message);
+  } 
 
   return (
     <form onSubmit={handleSubmit}>
