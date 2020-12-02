@@ -1,28 +1,29 @@
 import React from 'react';
+import { Table } from 'semantic-ui-react'
 
 export const ToDoList = ({ items = [] }) => {
 
   return(
-    <table>
-      <thead>
-        <tr>
-          <th>
+    <Table celled padded>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell>
             Message
-          </th>
-        </tr>
-      </thead>
-      <tbody>
+          </Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
         {items && items.map(item => {
           return (
-            <tr key={item}>
-              <td>
+            <Table.Row key={item}>
+              <Table.Cell>
                 {item}
-              </td>
-            </tr>
+              </Table.Cell>
+            </Table.Row>
           )
         })}
-      </tbody>
-    </table>
+      </Table.Body>
+    </Table>
   );
 };
 

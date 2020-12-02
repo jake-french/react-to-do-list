@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Form } from 'semantic-ui-react';
 
 const CreateToDo = ({ onCreate }) => {
   const [ message, setMessage ] = useState('');
@@ -10,10 +11,19 @@ const CreateToDo = ({ onCreate }) => {
   } 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="message" value={message} onChange={evt => setMessage(evt.target.value)} />
-      <input type="submit"/>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <Form.Field>
+        <label htmlFor="message">Message</label>
+        <input 
+          id="message"
+          type="text" 
+          name="message" 
+          value={message} 
+          onChange={evt => setMessage(evt.target.value)}
+        />
+      </Form.Field>
+      <Button type='submit'>Add</Button>
+    </Form>
   );
 }
 
