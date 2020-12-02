@@ -1,10 +1,21 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 import ToDoItem from './';
 
+//comply with warnings regarding tr not inside a table
+const TableWrappedComponent = (props) => {
+  return (
+    <table>
+      <tbody>
+        <ToDoItem {...props} />
+      </tbody>
+    </table>
+  )
+}
+
 test('renders without crashing', () => {
-  shallow(<ToDoItem />);
+  mount(<TableWrappedComponent />);
 });
 
 describe('handles delete correctly', () => {
@@ -14,7 +25,7 @@ describe('handles delete correctly', () => {
   const callback = (toDo) => {
     deletedToDo = toDo;
   }
-  const wrapper = mount(<ToDoItem item={initialToDo} onDelete={callback}/>);
+  const wrapper = mount(<TableWrappedComponent item={initialToDo} onDelete={callback}/>);
   wrapper.find('Button[name="deleteToDoBtn"]').simulate('click');
 
   test('callback returned todo', () => {
