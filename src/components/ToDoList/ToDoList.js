@@ -1,6 +1,8 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react'
 
+import ToDoItem from '../ToDoItem';
+
 export const ToDoList = ({ items = [] }) => {
 
   return(
@@ -10,17 +12,14 @@ export const ToDoList = ({ items = [] }) => {
           <Table.HeaderCell>
             Message
           </Table.HeaderCell>
+          <Table.HeaderCell>
+            Options
+          </Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
         {items && items.map(item => {
-          return (
-            <Table.Row key={item}>
-              <Table.Cell>
-                {item}
-              </Table.Cell>
-            </Table.Row>
-          )
+          return <ToDoItem key={item} item={item} />
         })}
       </Table.Body>
     </Table>

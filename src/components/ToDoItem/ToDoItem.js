@@ -1,13 +1,16 @@
 import React from 'react';
-import {  } from 'semantic-ui-react';
+import { Button, Table } from 'semantic-ui-react';
 
-const ToDoItem = ({ item }) => {
-
-
+const ToDoItem = ({ item, onDelete }) => {
   return (
-    <div>
-      
-    </div>
+    <Table.Row>
+      <Table.Cell>
+        {item}
+      </Table.Cell>
+      <Table.Cell>
+        <Button name='deleteToDoBtn' color='red' onClick={() => onDelete(item)}>Delete</Button>
+      </Table.Cell>
+    </Table.Row>
   );
 }
 

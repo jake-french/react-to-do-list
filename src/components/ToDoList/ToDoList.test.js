@@ -17,8 +17,8 @@ describe('list displays items correctly', () => {
 
   test('list values display correctly', () => {
     const rows = wrapper.find('TableBody TableRow');
-    expect(rows.at(0).text()).toEqual('A');
-    expect(rows.at(1).text()).toEqual('B');
-    expect(rows.at(2).text()).toEqual('C');
+    expect(rows.at(0).find('TableCell').first().text()).toEqual('A');
+    expect(rows.at(1).find('TableCell').first().text()).toEqual('B');
+    expect(rows.at(2).find('TableCell').first().text()).toEqual('C');
   })
 });
