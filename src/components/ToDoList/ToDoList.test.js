@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import { ToDoList } from './ToDoList';
+import ToDoList from './';
 
 test('renders without errors', () => {
   shallow(<ToDoList />);

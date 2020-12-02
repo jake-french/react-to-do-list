@@ -1,5 +1,5 @@
 # Requirements
-- [ ] Add a new task  e.g. “call plumber”
+- [x] Add a new task  e.g. “call plumber”
 - [ ]	Delete a task
 - [ ]	Edit a task 
 - [ ]	Mark a task as complete
