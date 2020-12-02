@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const CreateToDo = ({  }) => {
+const CreateToDo = ({ onCreate }) => {
+  const [ message, setMessage ] = useState('');
+
+  const handleSubmit = () => onCreate(message);
 
   return (
-    <div>
-
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="message" onChange={evt => setMessage(evt.target.value)} />
+      <input type="submit"/>
+    </form>
   );
 }
 
