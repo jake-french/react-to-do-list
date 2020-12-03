@@ -32,7 +32,7 @@ describe('list functionality', () => {
     const wrapper = mount(<App items={items} />);
 
     wrapper.find('TableBody TableRow').at(1).find('Button[name="editBtn"]').simulate('click');
-    wrapper.find('TableBody TableRow').at(1).find('textarea[name="editMessage"]').simulate('change', { target: { value: 'D' }});
+    wrapper.find('TableBody TableRow').at(1).find('input[name="editMessage"]').simulate('change', { target: { value: 'D' }});
     wrapper.find('TableBody TableRow').at(1).find('Button[name="confirmEditBtn"]').simulate('click');
 
     expect(wrapper.find('TableBody TableRow')).toHaveLength(3);

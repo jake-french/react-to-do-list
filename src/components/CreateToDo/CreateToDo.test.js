@@ -14,7 +14,7 @@ describe('on create sends new item correctly', () => {
     createdToDo = toDo;
   };
   const wrapper = mount(<CreateToDo onCreate={onCreate}/>);
-  wrapper.find('textarea[name="message"]').simulate('change', { target: { value: 'Test Message' }});
+  wrapper.find('input[name="message"]').simulate('change', { target: { value: 'Test Message' }});
   wrapper.find('form').simulate('submit');
 
   test('callback returned message', () => {
@@ -22,6 +22,6 @@ describe('on create sends new item correctly', () => {
   });
 
   test('input is cleared', () => {
-    expect(wrapper.find('textarea[name="message"]').text()).toEqual('');
+    expect(wrapper.find('input[name="message"]').text()).toEqual('');
   });
 });

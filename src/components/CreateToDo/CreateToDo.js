@@ -14,7 +14,7 @@ const CreateToDo = ({ onCreate }) => {
     <Form onSubmit={handleSubmit}>
       <Form.Field>
         <label htmlFor="message">Message</label>
-        <textarea 
+        <input 
           id="message"
           type="text" 
           name="message"
