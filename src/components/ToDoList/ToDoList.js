@@ -13,6 +13,9 @@ export const ToDoList = ({ deleteItem, editItem, items = [] }) => {
             Message
           </Table.HeaderCell>
           <Table.HeaderCell>
+            Status
+          </Table.HeaderCell>
+          <Table.HeaderCell>
             Options
           </Table.HeaderCell>
         </Table.Row>
