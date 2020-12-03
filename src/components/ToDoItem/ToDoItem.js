@@ -17,7 +17,7 @@ const ToDoItem = ({ deleteItem, editItem, item }) => {
         {isEditMode ? (
           <Form>
             <Form.Field>
-              <input 
+              <textarea 
                 name='editMessage'
                 type='text'
                 value={message}
