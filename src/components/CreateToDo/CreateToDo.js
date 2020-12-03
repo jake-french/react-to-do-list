@@ -14,7 +14,7 @@ const CreateToDo = ({ onCreate }) => {
     <Form onSubmit={handleSubmit}>
       <Form.Field>
         <label htmlFor="message">Message</label>
-        <input 
+        <textarea 
           id="message"
           type="text" 
           name="message"
@@ -22,8 +22,8 @@ const CreateToDo = ({ onCreate }) => {
           value={message} 
           onChange={evt => setMessage(evt.target.value)}
         />
+        <Button attached='bottom' onClick={handleSubmit}>Add</Button>
       </Form.Field>
-      <Button type='submit'>Add</Button>
     </Form>
   );
 }

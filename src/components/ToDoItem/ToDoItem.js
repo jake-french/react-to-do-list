@@ -3,10 +3,11 @@ import { Button, Form, Icon, Table } from 'semantic-ui-react';
 
 const ToDoItem = ({ deleteItem, editItem, item }) => {
   const [ isEditMode, setIsEditMode ] = useState(false);
-  const [ value, setValue ] = useState(item.message);
+  const [ message, setMessage ] = useState(item.message);
+  const [ status, setStatus ] = useState(item.completed);
 
   const submitChange = () => {
-    editItem({ ...item, message: value });
+    editItem({ ...item, message, status });
     setIsEditMode(false);
   }
 
@@ -17,19 +18,35 @@ const ToDoItem = ({ deleteItem, editItem, item }) => {
           <Form>
             <Form.Field>
               <input 
-                name='editToDo'
+                name='editMessage'
                 type='text'
-                value={value}
-                onChange={evt => setValue(evt.target.value)}
+                value={message}
+                onChange={evt => setMessage(evt.target.value)}
               />
             </Form.Field>
           </Form>
         ) : (
-          value
+          message
         )}
       </Table.Cell>
       <Table.Cell>
-        {item.completed ? 'Completed' : 'In-Progress'}
+        {isEditMode ? (
+          <Form>
+            <Form.Field>
+              <select
+                name='editStatus'
+                value={status}
+                onChange={evt => setStatus(evt.target.value)}
+              >
+                <option value={true}>Completed</option>
+                <option value={false}>In-Progress</option>
+              </select>
+            </Form.Field>
+          </Form>
+        ) : (
+          item.completed ? 'Completed' : 'In-Progress'
+        )}
+        
       </Table.Cell>
       <Table.Cell>
         {isEditMode ? (

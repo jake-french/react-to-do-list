@@ -1,12 +1,10 @@
-
-const createdToDos = [];
+import { v4 as uuidV4 } from 'uuid';
 
 export const createToDo = (message = '') => {
   const toDo = {
-    id: createdToDos.length,
+    id: uuidV4(),
     message,
     completed: false
   };
-  createdToDos.push(toDo);
   return toDo;
 }

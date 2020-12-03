@@ -49,7 +49,8 @@ describe('can edit', () => {
     wrapper.find('Button[name="editBtn"]').simulate('click');
 
     test('message becomes editable', () => {
-      expect(wrapper.find('input[name="editToDo"]')).toHaveLength(1);
+      expect(wrapper.find('input[name="editMessage"]')).toHaveLength(1);
+      expect(wrapper.find('select[name="editStatus"]')).toHaveLength(1);
     });
 
     test('edit option buttons appear', () => {
@@ -58,7 +59,7 @@ describe('can edit', () => {
     });
 
     test('edited message is returned', () => {
-      wrapper.find('input[name="editToDo"]').simulate('change', { target: { value: editMessage }});
+      wrapper.find('input[name="editMessage"]').simulate('change', { target: { value: editMessage }});
       wrapper.find('Button[name="confirmEditBtn"]').simulate('click');
       expect(editedToDo.message).toEqual(editMessage);
     });
