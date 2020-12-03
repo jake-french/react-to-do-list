@@ -7,7 +7,7 @@ const ToDoItem = ({ deleteItem, editItem, item }) => {
   const [ status, setStatus ] = useState(item.completed);
 
   const submitChange = () => {
-    editItem({ ...item, message, status });
+    editItem({ ...item, message, completed: status });
     setIsEditMode(false);
   }
 
