@@ -6,7 +6,7 @@ import ToDoItem from '../ToDoItem';
 export const ToDoList = ({ deleteItem, items = [] }) => {
 
   return(
-    <Table celled padded>
+    <Table celled fixed>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>
