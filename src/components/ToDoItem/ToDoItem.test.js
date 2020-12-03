@@ -25,7 +25,7 @@ describe('handles delete correctly', () => {
   const callback = (toDo) => {
     deletedToDo = toDo;
   }
-  const wrapper = mount(<TableWrappedComponent item={initialToDo} onDelete={callback}/>);
+  const wrapper = mount(<TableWrappedComponent item={initialToDo} deleteItem={callback}/>);
   wrapper.find('Button[name="deleteToDoBtn"]').simulate('click');
 
   test('callback returned todo', () => {
