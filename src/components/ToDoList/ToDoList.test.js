@@ -2,13 +2,14 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import ToDoList from './';
+import { createToDo } from '../../testUtils';
 
 test('renders without errors', () => {
   shallow(<ToDoList />);
 });
 
 describe('list displays items correctly', () => {
-  const items = ['A', 'B', 'C'];
+  const items = [createToDo('A'), createToDo('B'), createToDo('C')];
   const wrapper = mount(<ToDoList items={items} />);
 
   test('list shows correct number of items', () => {

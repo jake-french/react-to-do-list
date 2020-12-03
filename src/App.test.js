@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 
 import App from './App';
+import { createToDo } from './testUtils';
 
 describe('on inital mount', () => {
   const wrapper = shallow(<App />); 
@@ -17,13 +18,13 @@ describe('on inital mount', () => {
 
 describe('list functionality', () => {
   test('deleted items are removed from list', () => {
-    const items = ['A', 'B', 'C'];
+    const items = [createToDo('A'), createToDo('B'), createToDo('C')];
     const wrapper = mount(<App items={items} />);
 
     expect(wrapper.find('TableBody TableRow')).toHaveLength(3);
 
     var row = wrapper.find('TableBody TableRow').at(1);
-    row.find('Button[name="deleteToDoBtn"]').simulate('click');
+    row.find('Button[name="deleteBtn"]').simulate('click');
 
     expect(wrapper.find('TableBody TableRow')).toHaveLength(2);
   });

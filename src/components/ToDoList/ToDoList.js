@@ -3,7 +3,7 @@ import { Table } from 'semantic-ui-react'
 
 import ToDoItem from '../ToDoItem';
 
-export const ToDoList = ({ deleteItem, items = [] }) => {
+export const ToDoList = ({ deleteItem, editItem, items = [] }) => {
 
   return(
     <Table celled fixed>
@@ -19,7 +19,7 @@ export const ToDoList = ({ deleteItem, items = [] }) => {
       </Table.Header>
       <Table.Body>
         {items && items.map(item => {
-          return <ToDoItem key={item} item={item} deleteItem={deleteItem} />
+          return <ToDoItem key={item.id} item={item} deleteItem={deleteItem} editItem={editItem} />
         })}
       </Table.Body>
     </Table>
