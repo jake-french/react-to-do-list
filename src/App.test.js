@@ -33,9 +33,11 @@ describe('list functionality', () => {
 
     wrapper.find('TableBody TableRow').at(1).find('Button[name="editBtn"]').simulate('click');
     wrapper.find('TableBody TableRow').at(1).find('input[name="editMessage"]').simulate('change', { target: { value: 'D' }});
+    wrapper.find('TableBody TableRow').at(1).find('select[name="editStatus"]').simulate('change', { target: { value: true }});
     wrapper.find('TableBody TableRow').at(1).find('Button[name="confirmEditBtn"]').simulate('click');
 
     expect(wrapper.find('TableBody TableRow')).toHaveLength(3);
-    expect(wrapper.find('TableBody TableRow').at(1).find('TableCell').first().text()).toEqual('D');
+    expect(wrapper.find('TableBody TableRow').at(1).find('TableCell').at(0).text()).toEqual('D');
+    expect(wrapper.find('TableBody TableRow').at(1).find('TableCell').at(1).text()).toEqual('Completed');
   });
 });
