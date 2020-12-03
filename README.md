@@ -2,6 +2,6 @@
 - [x] Add a new task  e.g. “call plumber”
 - [x]	Delete a task
 - [x]	Edit a task 
-- [ ]	Mark a task as complete
-- [ ]	Mark a completed task as incomplete
-- [ ] View all tasks (complete and incomplete)
+- [x]	Mark a task as complete
+- [x]	Mark a completed task as incomplete
+- [x] View all tasks (complete and incomplete)
