@@ -18,8 +18,17 @@ describe('list displays items correctly', () => {
 
   test('list values display correctly', () => {
     const rows = wrapper.find('TableBody TableRow');
-    expect(rows.at(0).find('TableCell').first().text()).toEqual('A');
-    expect(rows.at(1).find('TableCell').first().text()).toEqual('B');
-    expect(rows.at(2).find('TableCell').first().text()).toEqual('C');
-  })
+
+    const firstRowCells = rows.at(0).find('TableCell');
+    expect(firstRowCells.at(0).text()).toEqual('A');
+    expect(firstRowCells.at(1).text()).toEqual('In-Progress');
+
+    const secondRowCells = rows.at(1).find('TableCell');
+    expect(secondRowCells.at(0).text()).toEqual('B');
+    expect(secondRowCells.at(1).text()).toEqual('In-Progress');
+
+    const thirdRowCells = rows.at(2).find('TableCell');
+    expect(thirdRowCells.at(0).text()).toEqual('C');
+    expect(thirdRowCells.at(1).text()).toEqual('In-Progress');
+  });
 });

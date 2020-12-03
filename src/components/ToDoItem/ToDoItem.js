@@ -29,6 +29,9 @@ const ToDoItem = ({ deleteItem, editItem, item }) => {
         )}
       </Table.Cell>
       <Table.Cell>
+        {item.completed ? 'Completed' : 'In-Progress'}
+      </Table.Cell>
+      <Table.Cell>
         {isEditMode ? (
           <Button.Group>
             <Button
