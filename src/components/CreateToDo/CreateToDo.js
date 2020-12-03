@@ -17,7 +17,8 @@ const CreateToDo = ({ onCreate }) => {
         <input 
           id="message"
           type="text" 
-          name="message" 
+          name="message"
+          autoComplete="off" 
           value={message} 
           onChange={evt => setMessage(evt.target.value)}
         />
