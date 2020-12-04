@@ -1,6 +1,7 @@
 # React To-Do List
 
 To run tests - npm test / yarn test
+
 To run app locally - npm start / yarn start
 
 Uses Semantic UI React for UI styling.
